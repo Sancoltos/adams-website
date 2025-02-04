@@ -1,42 +1,286 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially offscreen */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  overflow: auto;
+  transition: 0.7s;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 5; /* Ensure sidebar appears above other content */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+.sidebar.open {
+  left: 0; /* Moves the sidebar into view */
+  z-index: 10; /* Higher z-index when sidebar is open */
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
+/* Sidebar List Styles */
+.sidebar ul {
+  list-style-type: none;
   padding: 0;
-  margin: 0;
 }
 
-a {
-  color: inherit;
+
+.sidebar ul li {
+  padding: 10px 20px;
+}
+
+
+.sidebar ul li a {
+  color: white;
   text-decoration: none;
+  display: block;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+
+.sidebar ul li a:hover {
+  background-color: #575757;
+}
+
+
+/* Menu Button Styles */
+#menuButton {
+  font-size: 12px;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #333;
+  color: white;
+  padding-top: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 7px;
+  border-radius: 3px;
+}
+
+
+/* Biography Section Styles */
+.bio-title {
+  background: rgba(230, 121, 13, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(233, 157, 5, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur();
+  border: 3px solid rgba(188, 13, 13, 0.18);
+  z-index: 1;
+  padding-right: 1em;
+  padding-left: 1em;
+  border-radius: 15px;
+  position: fixed;
+  width: 30%;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  text-align: center;
+}
+
+
+.bio-text {
+  background: rgba(230, 121, 13, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(233, 157, 5, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur();
+  border: 3px solid rgba(188, 13, 13, 0.18);
+  z-index: 1;
+  padding-right: 1em;
+  padding-left: 1em;
+  border-radius: 15px;
+  position: fixed;
+  width: 30%;
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  text-align: center;
+}
+
+
+#backgroundVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;  
+  animation: fadeIn 5s;  
+}
+
+
+.video-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.footer{
+  background: rgba(230, 121, 13, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(233, 157, 5, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur();
+  border: 3px solid rgba(188, 13, 13, 0.18);
+  z-index: 1;
+  padding-right: 1em;
+  padding-left: 1em;
+  border-radius: 15px;
+  position: fixed;
+  width: 30%;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  text-align: center;
+}
+
+.title {
+  position: absolute;
+  top: 15%;
+  left: 35%;
+  bottom: 65%;
+  right: 35%;
+  background: rgba(245, 162, 78, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(233, 157, 5, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur();
+  border: 3px solid rgba(188, 13, 13, 0.18);
+  z-index: 1;
+  padding-right: 1em;
+  padding-left: 1em;
+  transform: translateX(0%);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+.welcomeMessage {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  right: 35%;
+  background: rgba(245, 162, 78, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(233, 157, 5, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur();
+  border: 3px solid rgba(188, 13, 13, 0.18);
+  z-index: 1;
+  padding: 0em;
+  transform: translateX(0%);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+
+.contact-title {
+  background: rgba(230, 121, 13, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(233, 157, 5, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur();
+  border: 3px solid rgba(188, 13, 13, 0.18);
+  z-index: 1;
+  padding-right: 1em;
+  padding-left: 1em;
+  transform: translateX(0%);
+  border-radius: 15px;
+  position: fixed;
+  width: 25%;
+  left: 49%;
+  top: 5%;
+  transform: translateX(-50%);
+  text-align: center;
+  
+}
+
+.contact-table {
+  margin: 20px auto;
+  background: rgba(230, 121, 13, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(233, 157, 5, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur();
+  border: 3px solid rgba(188, 13, 13, 0.18);
+  z-index: 1;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  border-radius: 15px;
+  position: fixed;
+  top: 25%;
+  left: 35%;
+  right: 35%;
+
+  
+}
+
+.contact-table input,
+.contact-table textarea {
+    width: 200px;
+    margin: 5px 0;
+   
+}
+.contact-table label {
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.contact-table div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+
+
+
+#contactbackground {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+
+}
+
+button {
+  background-color: #1608dc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+  transition: background-color 0.3s ease;
+  text-align: center ;
+  display: block;
+  margin: 10px auto;
+}
+
+.contact-body {
+  text-align: center;
+  font-family: Impact,'Arial Narrow Bold', sans-serif;
+  color: rgb(187, 208, 208);
+}
+
+.h1 {
+  color: #ffffff;
 }
