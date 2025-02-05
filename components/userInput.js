@@ -1,6 +1,6 @@
 // components/userinput.js
 
-export function contactPeople(event, formData, setFormData) {
+export function contactPeople(event, formData, setFormData, setSuccessMessage) {
     event.preventDefault();
 
     const { name, email, message } = formData;
@@ -17,7 +17,11 @@ export function contactPeople(event, formData, setFormData) {
         existingMessages.push(contactData);
         localStorage.setItem('contactMessages', JSON.stringify(existingMessages));
 
-        alert(`Adam will get back to you shortly!\nName: ${name}\nEmail: ${email}\nMessage: ${message}`);
+        alert(`Your Message\nName: ${name}\nEmail: ${email}\nMessage: ${message}`);
+
+        setFormData({ name: '', email: '', message: '' });
+        setSuccessMessage(true);
+        setTimeout(() => setSuccessMessage(false), 5000);
 
         setFormData({ name: '', email: '', message: '' });
     } else {

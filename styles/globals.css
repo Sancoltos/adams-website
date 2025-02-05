@@ -2,7 +2,7 @@
 .sidebar {
   position: fixed;
   top: 0;
-  left: -250px; /* Initially offscreen */
+  left: -250px;
   width: 250px;
   height: 100%;
   background-color: #333;
@@ -10,27 +10,22 @@
   overflow: auto;
   transition: 0.7s;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-  z-index: 5; /* Ensure sidebar appears above other content */
+  z-index: 5;
 }
-
 
 .sidebar.open {
-  left: 0; /* Moves the sidebar into view */
-  z-index: 10; /* Higher z-index when sidebar is open */
+  left: 0;
+  z-index: 10;
 }
 
-
-/* Sidebar List Styles */
 .sidebar ul {
   list-style-type: none;
   padding: 0;
 }
 
-
 .sidebar ul li {
   padding: 10px 20px;
 }
-
 
 .sidebar ul li a {
   color: white;
@@ -38,13 +33,10 @@
   display: block;
 }
 
-
 .sidebar ul li a:hover {
   background-color: #575757;
 }
 
-
-/* Menu Button Styles */
 #menuButton {
   font-size: 12px;
   cursor: pointer;
@@ -60,8 +52,6 @@
   border-radius: 3px;
 }
 
-
-/* Biography Section Styles */
 .bio-title {
   background: rgba(230, 121, 13, 0.25);
   box-shadow: 0 8px 32px 0 rgba(233, 157, 5, 0.3);
@@ -80,7 +70,6 @@
   color: #ffffff;
   text-align: center;
 }
-
 
 .bio-text {
   background: rgba(230, 121, 13, 0.25);
@@ -101,7 +90,6 @@
   text-align: center;
 }
 
-
 #backgroundVideo {
   position: fixed;
   right: 0;
@@ -111,7 +99,6 @@
   z-index: -1;  
   animation: fadeIn 5s;  
 }
-
 
 .video-container {
   position: fixed;
@@ -123,8 +110,7 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-
-.footer{
+.footer {
   background: rgba(230, 121, 13, 0.25);
   box-shadow: 0 8px 32px 0 rgba(233, 157, 5, 0.3);
   backdrop-filter: blur(10px);
@@ -187,7 +173,6 @@
   color: #ffffff;
 }
 
-
 .contact-title {
   background: rgba(230, 121, 13, 0.25);
   box-shadow: 0 8px 32px 0 rgba(233, 157, 5, 0.3);
@@ -205,7 +190,6 @@
   top: 5%;
   transform: translateX(-50%);
   text-align: center;
-  
 }
 
 .contact-table {
@@ -224,16 +208,14 @@
   top: 25%;
   left: 35%;
   right: 35%;
-
-  
 }
 
 .contact-table input,
 .contact-table textarea {
-    width: 200px;
-    margin: 5px 0;
-   
+  width: 200px;
+  margin: 5px 0;
 }
+
 .contact-table label {
   color: #ffffff;
   text-align: center;
@@ -249,9 +231,6 @@
   width: 100%;
 }
 
-
-
-
 #contactbackground {
   position: fixed;
   left: 0;
@@ -260,7 +239,6 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
-
 }
 
 button {
@@ -270,7 +248,7 @@ button {
   cursor: pointer;
   font-size: 25px;
   transition: background-color 0.3s ease;
-  text-align: center ;
+  text-align: center;
   display: block;
   margin: 10px auto;
 }
@@ -283,4 +261,23 @@ button {
 
 .h1 {
   color: #ffffff;
+}
+
+.success-message {
+  background: rgba(230, 121, 13, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(233, 157, 5, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur();
+  border: 3px solid rgba(188, 13, 13, 0.18);
+  z-index: 1;
+  padding-right: 1em;
+  padding-left: 1em;
+  border-radius: 15px;
+  position: fixed;
+  width: 30%;
+  left: 50%;
+  bottom: 15%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  text-align: center;
 }

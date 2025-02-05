@@ -1,4 +1,4 @@
-const CopyRight = () => {
+const CopyRight = () => { //just a simple copyright footer component. we can do this here to make it easier to add to each page
     
     return (
         <div className="footer">
